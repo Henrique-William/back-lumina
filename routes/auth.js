@@ -9,9 +9,9 @@ const JWT_SECRET = '7e31dd87-5bd0-4496-bd34-29fada787497';
 
 // Registro
 router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, name } = req.body;
   try {
-    const user = new User({ email, password });
+    const user = new User({ email, password, name });
     await user.save();
     res.status(201).json({ message: 'Usuário registrado!' });
   } catch (error) {
