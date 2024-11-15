@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/suaDatabase', {
+mongoose.connect('mongodb+srv://henrique:henriquedb@henriquedb.oqqyucc.mongodb.net/lumina?retryWrites=true&w=majority&appName=HenriqueDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB conectado!'))
@@ -15,4 +15,4 @@ mongoose.connect('mongodb://localhost:27017/suaDatabase', {
 
 app.use('/api/auth', authRoutes);
 
-app.listen(5000, () => console.log('Servidor rodando na porta 5000'));
+app.listen(8000, () => console.log('Servidor rodando na porta 8000'));
